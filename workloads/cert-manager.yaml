@@ -1,0 +1,14 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: cert-manager
+  namespace: cert-manager
+spec:
+  releaseName: cert-manager
+  chart:
+    git: git@github.com:nataz77/osmdemo-k8s.git
+    path: charts/cert-manager
+    ref: master
+  values:    
+    replicaCount: 1
+    installCRDs: true
