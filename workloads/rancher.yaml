@@ -1,8 +1,11 @@
+---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: rancher
   namespace: cattle-system
+  annotations:
+    fluxcd.io/automated: "true"
 spec:
   releaseName: rancher
   chart:

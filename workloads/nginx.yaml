@@ -1,8 +1,11 @@
+---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: nginx-ingress-controller
   namespace: ingress-nginx
+  annotations:
+    fluxcd.io/automated: "true"
 spec:
   releaseName: nginx-ingress
   chart:
