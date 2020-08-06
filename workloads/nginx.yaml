@@ -15,5 +15,5 @@ spec:
   values:
     image:
       repository: quay.io/kubernetes-ingress-controller/nginx-ingress-controller
-      tag: "0.32.0"
+      tag: "dev"
     replicaCount: 3
