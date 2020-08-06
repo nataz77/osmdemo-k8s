@@ -12,6 +12,17 @@ spec:
     git: git@github.com:nataz77/osmdemo-k8s.git
     path: charts/cert-manager
     ref: master
-  values:    
+  values:
+    image:
+      repository: quay.io/jetstack/cert-manager-controller
+      tag: "v0.16.0"
+    cainjector:
+      image:
+        repository: quay.io/jetstack/cert-manager-cainjector
+        tag: "v0.16.0"
+    webhook:
+      image:
+         repository: quay.io/jetstack/cert-manager-webhook
+         tag: "v0.16.0"
     replicaCount: 1
     installCRDs: true
