@@ -1,0 +1,18 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: rancher
+  namespace: cattle-system
+spec:
+  releaseName: rancher
+  chart:
+    git: git@github.com:nataz77/osmdemo-k8s.git
+    path: charts/rancher
+    ref: master
+  values:
+    hostname: rancher.osmdemo.almdev.it
+    ingress:
+      tls:
+        source: letsEncrypt 
+    letsEncrypt:
+      email: natalinis@outlook.com
