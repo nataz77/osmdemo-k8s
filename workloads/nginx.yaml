@@ -1,0 +1,16 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: nginx-ingress-controller
+  namespace: ingress-nginx
+spec:
+  releaseName: nginx-ingress
+  chart:
+    git: git@github.com:nataz77/osmdemo-k8s.git
+    path: charts/nginx
+    ref: master
+  values:
+    image:
+      repository: quay.io/kubernetes-ingress-controller/nginx-ingress-controller
+      tag: "0.32.0"
+    replicaCount: 3
